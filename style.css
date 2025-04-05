@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --bg-color: #F4F0E6;
+  --text-color: #2B1D0E;
+  --button-color: #8B5C30;
+  --button-hover: #C62828;
+  --border-accent: #A89F94;
+  --white: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--border-accent);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  padding: 8px 4px;
+}
+
+nav ul li a:hover {
+  color: var(--button-hover);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.cta-button {
+  background-color: var(--button-color);
+  color: var(--white);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+  background-color: var(--button-hover);
+}
+
+/* HERO SECTION */
+#hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 90vh;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.hero-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-overlay {
+  background: rgba(43, 29, 14, 0.6);
+  padding: 60px 20px;
+  width: 100%;
+}
+
+.hero-overlay h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.hero-overlay p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.hero-cta {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* RESPONSIVE NAVIGATION */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: var(--white);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+}
