@@ -4,77 +4,72 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FenceRepair.ca – Fence Repair & Installation Experts</title>
-  
-  <!-- Favicon & App Icons -->
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
-
-  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- Header -->
-  <header>
-    <div class="logo">
-      <a href="/">
-        <img 
-          src="https://ik.imagekit.io/888localseo/FenceRepair/logo.png?tr=w-220,f-auto" 
-          alt="FenceRepair.ca Logo" 
-          width="220" 
-          height="auto" 
-          loading="eager"
-        />
+  <header class="header">
+    <div class="container header-flex">
+      <a href="/" class="logo">
+        <img src="https://ik.imagekit.io/888localseo/FenceRepair/logo.png?tr=w-220,f-auto" alt="FenceRepair.ca Logo" />
       </a>
-    </div>
-    <div class="header-right">
-      <nav>
-        <ul>
+      <nav class="nav">
+        <ul class="nav-list">
           <li><a href="#services">Services</a></li>
           <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
       <div class="cta-buttons">
-        <a href="tel:2897250217" class="cta-button" onclick="gtag('event', 'click_phone_number_header');">📞 (289) 725-0217</a>
-        <a href="http://dawson-fence-deck-repair.square.site/" class="cta-button" target="_blank" onclick="gtag('event', 'click_bookonline_button_header');">📅 Book Online</a>
+        <a href="tel:2897250217" class="btn btn-primary" onclick="gtag('event', 'click_phone_number_header');">📞 (289) 725-0217</a>
+        <a href="http://dawson-fence-deck-repair.square.site/" class="btn btn-secondary" target="_blank" onclick="gtag('event', 'click_bookonline_button_header');">📅 Book Online</a>
       </div>
-      <div class="nav-toggle" id="nav-toggle">&#9776;</div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="hero">
-    <picture>
-      <source srcset="https://ik.imagekit.io/888localseo/FenceRepair/Desktop%20Hero%20Banner%20(1600%20x%20900%20px).png?tr=w-1600,f-auto" media="(min-width: 769px)">
-      <img 
-        src="https://ik.imagekit.io/888localseo/FenceRepair/hero-banner-mobile.jpg?tr=w-800,f-auto" 
-        alt="Fence Repair Service Banner"
-        width="100%"
-        height="auto"
-        loading="lazy"
-        class="hero-img"
-      />
-    </picture>
-    <div class="hero-overlay">
-      <h1>Fence Repair & Installation Experts Near You</h1>
-      <p>Fast, affordable fencing solutions in your area</p>
-      <div class="hero-cta">
-        <a href="tel:2897250217" class="cta-button" onclick="gtag('event', 'click_phone_number_body');">📞 Call Now</a>
-        <a href="http://dawson-fence-deck-repair.square.site/" class="cta-button" target="_blank" onclick="gtag('event', 'click_bookonline_button_body');">📅 Book Online</a>
+  <!-- Hero -->
+  <section class="hero">
+    <img src="https://ik.imagekit.io/888localseo/FenceRepair/Desktop%20Hero%20Banner%20(1600%20x%20900%20px).png?tr=w-1600,f-auto" alt="Hero Background" class="hero-bg" />
+    <div class="overlay">
+      <div class="hero-content container">
+        <h1>Fence Repair & Installation Experts Near You</h1>
+        <p>Fast, affordable fencing solutions in your area</p>
+        <div class="hero-cta">
+          <a href="tel:2897250217" class="btn btn-primary" onclick="gtag('event', 'click_phone_number_body');">📞 Call Now</a>
+          <a href="http://dawson-fence-deck-repair.square.site/" class="btn btn-secondary" target="_blank" onclick="gtag('event', 'click_bookonline_button_body');">📅 Book Online</a>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Services Section -->
+  <section id="services" class="section container">
+    <h2>Our Services</h2>
+    <p>We offer a full range of fence repairs and new installations.</p>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="section container">
+    <h2>Recent Projects</h2>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="section container">
+    <h2>What Our Customers Say</h2>
+  </section>
+
   <!-- Footer -->
   <footer>
-    <div class="footer-content">
+    <div class="footer-content container">
       <p>© 2025 FenceRepair.ca — All Rights Reserved</p>
-      <p>
+      <p style="color: #bbb; opacity: 0.7;">
         <a href="https://888localseo.com/" target="_blank" style="color: inherit; text-decoration: none;">
           Local SEO powered by 888 Local SEO
         </a>
@@ -82,7 +77,6 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="script.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-C2B3YRCVZN"></script>
   <script>
