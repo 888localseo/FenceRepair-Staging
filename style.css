@@ -101,3 +101,24 @@ footer {
   text-align: center;
   padding: 2rem 1rem;
 }
+
+/* Instagram-style Gallery Collage */
+.gallery-collage-section {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+.gallery-collage-section .section-heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.gallery-collage {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 0;
+}
+.gallery-collage img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
