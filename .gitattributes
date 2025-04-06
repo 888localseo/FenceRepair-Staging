@@ -1,0 +1,29 @@
+# Handle all text files using Git's automatic line ending normalization
+* text=auto
+
+# Force Unix-style LF endings for common code/text files
+*.html  text eol=lf
+*.css   text eol=lf
+*.js    text eol=lf
+*.json  text eol=lf
+*.ts    text eol=lf
+*.jsx   text eol=lf
+*.tsx   text eol=lf
+*.md    text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.sh    text eol=lf
+
+# Treat images and binaries as binary (no line ending conversion)
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.svg   binary
+*.ico   binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+
+# Optional: CRLF for Windows-specific scripts
+*.bat   text eol=crlf
