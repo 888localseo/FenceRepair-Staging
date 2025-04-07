@@ -77,7 +77,15 @@
   <header>
     <div class="logo">
       <a href="/">
-        <img src="https://ik.imagekit.io/888localseo/FenceRepair/FenceRepair.ca%20Logo%20Transparent%20(2000%20x%20500%20px).png?tr=w-800,f-webp" alt="FenceRepair.ca Logo" class="main-logo" loading="lazy" decoding="async">
+        <img src="https://ik.imagekit.io/888localseo/FenceRepair/FenceRepair.ca%20Logo%20Transparent%20(2000%20x%20500%20px).png?tr=w-800,f-webp" 
+             alt="FenceRepair.ca Logo" 
+             class="main-logo" 
+             width="800" 
+             height="200"
+             loading="lazy" 
+             decoding="async"
+             srcset="https://ik.imagekit.io/888localseo/FenceRepair/FenceRepair.ca%20Logo%20Transparent%20(2000%20x%20500%20px).png?tr=w-400,f-webp 400w, https://ik.imagekit.io/888localseo/FenceRepair/FenceRepair.ca%20Logo%20Transparent%20(2000%20x%20500%20px).png?tr=w-800,f-webp 800w"
+             sizes="(max-width: 768px) 180px, 250px">
       </a>
     </div>
     <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
@@ -97,8 +105,15 @@
   <!-- Hero Banner Section -->
   <section class="hero" aria-label="Hero Banner">
     <picture>
-      <source media="(max-width: 768px)" srcset="https://ik.imagekit.io/888localseo/FenceRepair/hero-banner-mobile.jpg?tr=f-webp">
-      <img src="https://ik.imagekit.io/888localseo/FenceRepair/Desktop%20Hero%20Banner%20(1600%20x%20900%20px).png?tr=f-webp" alt="Fence Repair Hero Banner" class="hero-image" decoding="async">
+      <source media="(max-width: 768px)" srcset="https://ik.imagekit.io/888localseo/FenceRepair/hero-banner-mobile.jpg?tr=w-600,f-webp">
+      <img src="https://ik.imagekit.io/888localseo/FenceRepair/Desktop%20Hero%20Banner%20(1600%20x%20900%20px).png?tr=f-webp" 
+           alt="Fence Repair Hero Banner" 
+           class="hero-image" 
+           width="1600" 
+           height="900"
+           decoding="async"
+           srcset="https://ik.imagekit.io/888localseo/FenceRepair/Desktop%20Hero%20Banner%20(1600%20x%20900%20px).png?tr=f-webp 1600w, https://ik.imagekit.io/888localseo/FenceRepair/Desktop%20Hero%20Banner%20(1600%20x%20900%20px).png?tr=w-800,f-webp 800w"
+           sizes="(max-width: 768px) 100vw, 1600px">
     </picture>
     <div class="hero-content">
       <h1>Expert Fence Repair</h1>
@@ -129,7 +144,7 @@
       </blockquote>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- Gallery Section (10 images for symmetry) -->
     <section id="gallery" aria-labelledby="gallery-heading">
       <h2 id="gallery-heading">Gallery</h2>
       <div class="image-gallery">
@@ -143,7 +158,6 @@
         <img src="https://ik.imagekit.io/888localseo/FenceRepair/g8?tr=w-300,f-webp" data-highres="https://ik.imagekit.io/888localseo/FenceRepair/g8?tr=w-1200,f-webp" alt="Gallery Image 8" width="300" height="300" loading="lazy">
         <img src="https://ik.imagekit.io/888localseo/FenceRepair/g9?tr=w-300,f-webp" data-highres="https://ik.imagekit.io/888localseo/FenceRepair/g9?tr=w-1200,f-webp" alt="Gallery Image 9" width="300" height="300" loading="lazy">
         <img src="https://ik.imagekit.io/888localseo/FenceRepair/g10?tr=w-300,f-webp" data-highres="https://ik.imagekit.io/888localseo/FenceRepair/g10?tr=w-1200,f-webp" alt="Gallery Image 10" width="300" height="300" loading="lazy">
-        <img src="https://ik.imagekit.io/888localseo/FenceRepair/g11?tr=w-300,f-webp" data-highres="https://ik.imagekit.io/888localseo/FenceRepair/g11?tr=w-1200,f-webp" alt="Gallery Image 11" width="300" height="300" loading="lazy">
       </div>
     </section>
 
@@ -159,7 +173,7 @@
     </section>
   </main>
 
-  <!-- Modal for High-Resolution Gallery Images -->
+  <!-- Modal for Gallery Images -->
   <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <button class="close" aria-label="Close modal">&times;</button>
     <img class="modal-content" id="modalImg" alt="High Resolution Gallery Image">

@@ -55,9 +55,8 @@ a:focus, button:focus {
   background-color: var(--main-bg);
   border-bottom: 1px solid var(--accent);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
   padding: 0.5rem 1rem;
 }
 #sticky-top-strip a {
@@ -68,8 +67,6 @@ a:focus, button:focus {
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
   transition: background-color 0.3s ease;
-  min-width: 48px;
-  min-height: 48px;
 }
 #sticky-top-strip a:hover {
   background-color: var(--cta-hover);
@@ -203,7 +200,8 @@ section h2 {
 }
 .image-gallery img {
   width: 100%;
-  height: 300px;
+  height: auto;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -269,16 +267,21 @@ footer .powered-by {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-  /* Adjust sticky top strip layout */
+  /* Sticky Top Strip: stack CTAs with full width */
   #sticky-top-strip {
     flex-direction: column;
     gap: 0.5rem;
+    align-items: stretch;
+  }
+  #sticky-top-strip a {
+    width: 100%;
+    text-align: center;
   }
   /* Logo adjustments */
   header .logo img.main-logo {
     max-width: 180px;
   }
-  /* Hamburger visible */
+  /* Show Hamburger */
   .hamburger {
     display: block;
   }
