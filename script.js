@@ -5,12 +5,14 @@ document.addEventListener('DOMContentLoaded', function () {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  // Hamburger Menu Toggle for Mobile Navigation
+  // Hamburger Menu Toggle for Mobile Navigation with ARIA support
   const hamburger = document.querySelector('.hamburger');
   const nav = document.querySelector('nav');
   if (hamburger && nav) {
     hamburger.addEventListener('click', function () {
-      nav.classList.toggle('open');
+      const isOpen = nav.classList.toggle('open');
+      // Update aria-expanded attribute
+      hamburger.setAttribute('aria-expanded', isOpen);
     });
   }
 
@@ -48,21 +50,36 @@ document.addEventListener('DOMContentLoaded', function () {
       if (highResSrc) {
         modalImg.src = highResSrc;
         modal.style.display = 'block';
+        // Set focus to close button for accessibility
+        closeBtn.focus();
       }
     });
   });
 
+  function closeModal() {
+    modal.style.display = 'none';
+    modalImg.src = '';
+  }
+
   if (closeBtn) {
     closeBtn.addEventListener('click', function () {
-      modal.style.display = 'none';
+      closeModal();
     });
   }
 
+  // Close modal when clicking outside the image
   if (modal) {
     modal.addEventListener('click', function (e) {
       if (e.target === modal) {
-        modal.style.display = 'none';
+        closeModal();
       }
     });
   }
+
+  // Close modal on pressing Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.style.display === 'block') {
+      closeModal();
+    }
+  });
 });

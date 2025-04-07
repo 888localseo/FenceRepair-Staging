@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FenceRepair.ca - Professional Fence Repair & Maintenance</title>
   <meta name="description" content="FenceRepair.ca offers expert fence repair and maintenance services with quality craftsmanship and accessible design.">
+  
+  <!-- Preload Critical Resources -->
+  <link rel="preload" as="image" href="https://ik.imagekit.io/888localseo/FenceRepair/Desktop%20Hero%20Banner%20(1600%20x%20900%20px).png?tr=f-webp">
 
   <!-- Resource Hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +23,7 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="manifest" href="/site.webmanifest">
 
   <!-- External CSS -->
   <link rel="stylesheet" href="style.css">
@@ -61,20 +64,23 @@
   <script src="script.js" defer></script>
 </head>
 <body>
+  <!-- Skip Navigation Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Sticky Top Strip (Only CTAs appear here) -->
   <div id="sticky-top-strip">
     <a href="tel:2897250217" class="cta cta-phone-header">Call: (289) 725-0217</a>
-    <a href="http://dawson-fence-deck-repair.square.site/" class="cta cta-booknow-header">Book Appointment</a>
+    <a href="https://dawson-fence-deck-repair.square.site/" class="cta cta-booknow-header">Book Appointment</a>
   </div>
 
-  <!-- Header Section (Reverted to previous version: logo + navigation only) -->
+  <!-- Header Section (logo + navigation only) -->
   <header>
     <div class="logo">
       <a href="/">
-        <img src="https://ik.imagekit.io/888localseo/FenceRepair/FenceRepair.ca%20Logo%20Transparent%20(2000%20x%20500%20px).png?tr=w-800,f-webp" alt="FenceRepair.ca Logo" width="800" height="120" loading="lazy">
+        <img src="https://ik.imagekit.io/888localseo/FenceRepair/FenceRepair.ca%20Logo%20Transparent%20(2000%20x%20500%20px).png?tr=w-800,f-webp" alt="FenceRepair.ca Logo" width="800" height="120" loading="lazy" decoding="async">
       </a>
     </div>
-    <button class="hamburger" aria-label="Toggle navigation">
+    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
@@ -88,11 +94,11 @@
     </nav>
   </header>
 
-  <!-- Hero Banner Section (Removed CTA button) -->
+  <!-- Hero Banner Section -->
   <section class="hero" aria-label="Hero Banner">
     <picture>
       <source media="(max-width: 768px)" srcset="https://ik.imagekit.io/888localseo/FenceRepair/hero-banner-mobile.jpg?updatedAt=1743913950205&tr=f-webp">
-      <img src="https://ik.imagekit.io/888localseo/FenceRepair/Desktop%20Hero%20Banner%20(1600%20x%20900%20px).png?tr=f-webp" alt="Fence Repair Hero Banner" width="1600" height="900">
+      <img src="https://ik.imagekit.io/888localseo/FenceRepair/Desktop%20Hero%20Banner%20(1600%20x%20900%20px).png?tr=f-webp" alt="Fence Repair Hero Banner" width="1600" height="900" decoding="async">
     </picture>
     <div class="hero-content">
       <h1>Expert Fence Repair</h1>
@@ -101,7 +107,7 @@
   </section>
 
   <!-- Main Content -->
-  <main>
+  <main id="main-content">
     <!-- About Section -->
     <section id="about" aria-labelledby="about-heading">
       <h2 id="about-heading">About Us</h2>
@@ -127,7 +133,7 @@
     <section id="gallery" aria-labelledby="gallery-heading">
       <h2 id="gallery-heading">Gallery</h2>
       <div class="image-gallery">
-        <!-- Gallery images using naming convention g1 to g11 -->
+        <!-- Gallery images -->
         <img src="https://ik.imagekit.io/888localseo/FenceRepair/g1?tr=w-300,f-webp" data-highres="https://ik.imagekit.io/888localseo/FenceRepair/g1?tr=w-1200,f-webp" alt="Gallery Image 1" width="300" height="300" loading="lazy">
         <img src="https://ik.imagekit.io/888localseo/FenceRepair/g2?tr=w-300,f-webp" data-highres="https://ik.imagekit.io/888localseo/FenceRepair/g2?tr=w-1200,f-webp" alt="Gallery Image 2" width="300" height="300" loading="lazy">
         <img src="https://ik.imagekit.io/888localseo/FenceRepair/g3?tr=w-300,f-webp" data-highres="https://ik.imagekit.io/888localseo/FenceRepair/g3?tr=w-1200,f-webp" alt="Gallery Image 3" width="300" height="300" loading="lazy">
@@ -142,7 +148,7 @@
       </div>
     </section>
 
-    <!-- Contact Section (CTAs removed) -->
+    <!-- Contact Section -->
     <section id="contact" aria-labelledby="contact-heading">
       <h2 id="contact-heading">Get In Touch</h2>
       <p>For inquiries, please call us or fill out our online form.</p>
@@ -150,12 +156,12 @@
   </main>
 
   <!-- Modal for High-Resolution Gallery Images -->
-  <div id="imageModal" class="modal">
-    <span class="close" aria-label="Close modal">&times;</span>
+  <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="close" aria-label="Close modal">&times;</button>
     <img class="modal-content" id="modalImg" alt="High Resolution Image">
   </div>
 
-  <!-- Footer (CTAs removed) -->
+  <!-- Footer -->
   <footer>
     <p>&copy; <span id="year"></span> FenceRepair.ca. All rights reserved.</p>
     <p>

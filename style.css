@@ -26,6 +26,27 @@ body {
   flex-direction: column;
 }
 
+/* Skip Navigation Link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--cta-bg);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 100;
+  transition: top 0.3s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Focus Styles for Interactive Elements */
+a:focus, button:focus {
+  outline: 2px dashed var(--cta-hover);
+  outline-offset: 2px;
+}
+
 /* Sticky Top Strip */
 #sticky-top-strip {
   position: sticky;
@@ -217,6 +238,8 @@ section h2 {
   color: #fff;
   font-size: 40px;
   font-weight: bold;
+  background: none;
+  border: none;
   cursor: pointer;
 }
 
