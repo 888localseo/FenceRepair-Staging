@@ -1,124 +1,251 @@
+/* style.css */
 
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  color: #222;
-  background: #fff;
+/* Root Variables for Brand Colors */
+:root {
+  --main-bg: #F4F0E6;           /* Warm Off-White */
+  --main-text: #2B1D0E;         /* Dark Brown */
+  --cta-bg: #8B5C30;            /* Wood Brown */
+  --cta-hover: #C62828;         /* Maple Red */
+  --accent: #A89F94;           /* Soft Gray */
 }
-img {
-  max-width: 100%;
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--main-bg);
+  color: var(--main-text);
+  line-height: 1.6;
+  padding: 0 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sticky Top Strip */
+#sticky-top-strip {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--cta-bg);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+#sticky-top-strip a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+#sticky-top-strip a:hover {
+  background-color: var(--cta-hover);
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 2px solid var(--accent);
+}
+header .logo img {
+  max-height: 60px;
   display: block;
 }
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 1rem;
-}
-.header {
-  background: #ffffff;
-  padding: 1rem 0;
-  border-bottom: 1px solid #eee;
-}
-.header-flex {
+nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
 }
-.nav-list {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-  padding: 0;
-}
-.nav-list a {
+nav a {
+  margin: 0 1rem;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  color: var(--main-text);
   text-decoration: none;
-  color: #333;
-  font-weight: bold;
+  transition: color 0.3s ease;
 }
-.btn {
-  padding: 0.75rem 1.25rem;
-  border: none;
-  text-decoration: none;
-  font-weight: bold;
+nav a:hover {
+  color: var(--cta-bg);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
   cursor: pointer;
-  border-radius: 4px;
-  display: inline-block;
 }
-.btn-primary {
-  background: #ec6b25;
-  color: #fff;
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: var(--main-text);
+  margin: 4px 0;
+  transition: 0.4s;
 }
-.btn-secondary {
-  background: #333;
-  color: #fff;
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--main-bg);
+    padding: 1rem 0;
+  }
+  nav.open {
+    display: flex;
+  }
+  nav a {
+    margin: 0.5rem 0;
+  }
+  .hamburger {
+    display: flex;
+  }
 }
+
+/* Hero Section */
 .hero {
   position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-.hero-bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  top: 0;
-  left: 0;
-  z-index: -2;
-}
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-align: center;
-}
-.hero-content h1 {
-  font-size: 2.5rem;
   color: #fff;
 }
-.hero-content p {
-  color: #eee;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
-.hero-cta .btn {
-  margin: 0.5rem;
+.hero .hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border-radius: 8px;
 }
-.section {
-  padding: 4rem 1rem;
+.hero .hero-content h1 {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
 }
-footer {
-  background: #111;
-  color: #eee;
-  text-align: center;
-  padding: 2rem 1rem;
+.hero .hero-content p {
+  font-size: 1.25rem;
+}
+.hero .hero-content .cta {
+  margin-top: 1rem;
+  background-color: var(--cta-bg);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.hero .hero-content .cta:hover {
+  background-color: var(--cta-hover);
 }
 
-/* Instagram-style Gallery Collage */
-.gallery-collage-section {
-  padding: 2rem 1rem;
-  text-align: center;
+/* Main Content */
+main {
+  padding: 2rem 0;
+  max-width: 1200px;
+  margin: auto;
+  flex: 1;
 }
-.gallery-collage-section .section-heading {
+section {
+  margin-bottom: 2rem;
+}
+section h2 {
+  font-family: 'Roboto', sans-serif;
   font-size: 2rem;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.5rem;
   margin-bottom: 1rem;
 }
-.gallery-collage {
+
+/* Image Gallery Section */
+.image-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 0;
 }
-.gallery-collage img {
+.image-gallery img {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 150px; /* Force square shape */
   object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.image-gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Modal Styles for Gallery */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1500;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+.modal-content {
+  margin: auto;
   display: block;
+  max-width: 90%;
+  max-height: 90%;
+}
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background-color: var(--main-bg);
+  color: var(--main-text);
+  padding: 1rem;
+  text-align: center;
+  border-top: 2px solid var(--accent);
+  margin-top: auto;
+}
+footer p {
+  margin: 0.5rem 0;
+}
+footer a {
+  color: var(--main-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+footer a:hover {
+  color: var(--cta-bg);
+}
+footer .powered-by {
+  color: var(--accent); /* Subtle light gray tone */
+  font-size: 0.875rem;
+}
+
+/* Extra Mobile Spacing for Readability */
+@media (max-width: 768px) {
+  body {
+    padding: 0 1rem;
+  }
 }
