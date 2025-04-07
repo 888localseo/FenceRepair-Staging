@@ -61,27 +61,24 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <!-- Sticky Top Strip -->
+  <!-- Sticky Top Strip (Only CTAs appear here) -->
   <div id="sticky-top-strip">
     <a href="tel:2897250217" class="cta cta-phone-header">Call: (289) 725-0217</a>
     <a href="http://dawson-fence-deck-repair.square.site/" class="cta cta-booknow-header">Book Appointment</a>
   </div>
 
-  <!-- Header Section -->
+  <!-- Header Section (Reverted to previous version: logo + navigation only) -->
   <header>
     <div class="logo">
       <a href="/">
-        <!-- Revised Logo with explicit dimensions -->
         <img src="https://ik.imagekit.io/888localseo/FenceRepair/FenceRepair.ca%20Logo%20Transparent%20(2000%20x%20500%20px).png?tr=w-800,f-webp" alt="FenceRepair.ca Logo" width="800" height="120" loading="lazy">
       </a>
     </div>
-    <!-- Hamburger Menu as a button for proper semantics -->
     <button class="hamburger" aria-label="Toggle navigation">
       <span></span>
       <span></span>
       <span></span>
     </button>
-    <!-- Navigation (only section links) -->
     <nav aria-label="Main Navigation">
       <a href="#about">About</a>
       <a href="#services">Services</a>
@@ -89,10 +86,9 @@
       <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
     </nav>
-    <!-- (Header CTAs removed from here to improve tap target spacing) -->
   </header>
 
-  <!-- Hero Banner Section -->
+  <!-- Hero Banner Section (Removed CTA button) -->
   <section class="hero" aria-label="Hero Banner">
     <picture>
       <source media="(max-width: 768px)" srcset="https://ik.imagekit.io/888localseo/FenceRepair/hero-banner-mobile.jpg?updatedAt=1743913950205&tr=f-webp">
@@ -101,7 +97,6 @@
     <div class="hero-content">
       <h1>Expert Fence Repair</h1>
       <p>Your trusted partner for professional fence maintenance and repair.</p>
-      <a class="cta cta-booknow-body" href="http://dawson-fence-deck-repair.square.site/">Book Now</a>
     </div>
   </section>
 
@@ -132,7 +127,7 @@
     <section id="gallery" aria-labelledby="gallery-heading">
       <h2 id="gallery-heading">Gallery</h2>
       <div class="image-gallery">
-        <!-- Gallery images g1 to g11 -->
+        <!-- Gallery images using naming convention g1 to g11 -->
         <img src="https://ik.imagekit.io/888localseo/FenceRepair/g1?tr=w-300,f-webp" data-highres="https://ik.imagekit.io/888localseo/FenceRepair/g1?tr=w-1200,f-webp" alt="Gallery Image 1" width="300" height="300" loading="lazy">
         <img src="https://ik.imagekit.io/888localseo/FenceRepair/g2?tr=w-300,f-webp" data-highres="https://ik.imagekit.io/888localseo/FenceRepair/g2?tr=w-1200,f-webp" alt="Gallery Image 2" width="300" height="300" loading="lazy">
         <img src="https://ik.imagekit.io/888localseo/FenceRepair/g3?tr=w-300,f-webp" data-highres="https://ik.imagekit.io/888localseo/FenceRepair/g3?tr=w-1200,f-webp" alt="Gallery Image 3" width="300" height="300" loading="lazy">
@@ -147,11 +142,10 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section (CTAs removed) -->
     <section id="contact" aria-labelledby="contact-heading">
       <h2 id="contact-heading">Get In Touch</h2>
-      <p>Call us at <a href="tel:2897250217" class="cta cta-phone-body"> (289) 725-0217</a> or schedule your service online.</p>
-      <p><a class="cta cta-booknow-body" href="http://dawson-fence-deck-repair.square.site/">Book Now</a></p>
+      <p>For inquiries, please call us or fill out our online form.</p>
     </section>
   </main>
 
@@ -161,17 +155,13 @@
     <img class="modal-content" id="modalImg" alt="High Resolution Image">
   </div>
 
-  <!-- Footer Section -->
+  <!-- Footer (CTAs removed) -->
   <footer>
     <p>&copy; <span id="year"></span> FenceRepair.ca. All rights reserved.</p>
     <p>
       Follow us on:
       <a href="#" aria-label="Facebook">Facebook</a> |
       <a href="#" aria-label="Instagram">Instagram</a>
-    </p>
-    <p>
-      <a href="tel:2897250217" class="cta cta-phone-footer">Call: (289) 725-0217</a>
-      <a href="http://dawson-fence-deck-repair.square.site/" class="cta cta-booknow-footer">Book Appointment</a>
     </p>
     <p class="powered-by">Powered by <a href="https://888localseo.com/" target="_blank" rel="noopener">888 Local SEO</a></p>
   </footer>

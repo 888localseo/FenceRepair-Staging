@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  // Hamburger Menu Toggle for Mobile Navigation (using a button element)
+  // Hamburger Menu Toggle for Mobile Navigation
   const hamburger = document.querySelector('.hamburger');
   const nav = document.querySelector('nav');
   if (hamburger && nav) {
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // GA4 Event Tracking Function
+  // GA4 Event Tracking Function (only for sticky top CTAs)
   function trackEvent(eventName) {
     if (typeof gtag === 'function') {
       gtag('event', eventName);
@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Helper to add tracking to multiple elements
   function addTracking(selector, eventName) {
     const elements = document.querySelectorAll(selector);
     elements.forEach(function (el) {
@@ -33,13 +32,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Attach GA4 event tracking for CTAs
+  // Attach GA4 event tracking for sticky top CTAs only
   addTracking('.cta-phone-header', 'click_phone_header');
   addTracking('.cta-booknow-header', 'click_booknow_button_header');
-  addTracking('.cta-phone-body', 'click_phone_body');
-  addTracking('.cta-booknow-body', 'click_booknow_button_body');
-  addTracking('.cta-phone-footer', 'click_phone_footer');
-  addTracking('.cta-booknow-footer', 'click_booknow_button_footer');
 
   // Modal Functionality for Image Gallery
   const galleryImages = document.querySelectorAll('.image-gallery img');
@@ -47,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const modalImg = document.getElementById('modalImg');
   const closeBtn = document.querySelector('.modal .close');
 
-  // Open modal when a gallery image is clicked
   galleryImages.forEach(function (img) {
     img.addEventListener('click', function () {
       const highResSrc = img.getAttribute('data-highres');
@@ -58,14 +52,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Close modal when close button is clicked
   if (closeBtn) {
     closeBtn.addEventListener('click', function () {
       modal.style.display = 'none';
     });
   }
 
-  // Close modal when clicking outside the modal image
   if (modal) {
     modal.addEventListener('click', function (e) {
       if (e.target === modal) {

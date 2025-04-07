@@ -108,7 +108,7 @@ nav a:hover {
   color: var(--cta-bg);
 }
 
-/* CTA Buttons */
+/* CTA Buttons (used only in sticky top strip) */
 .cta {
   background-color: var(--cta-bg);
   color: #fff;
@@ -155,9 +155,6 @@ nav a:hover {
 }
 .hero .hero-content p {
   font-size: 1.25rem;
-}
-.hero .hero-content .cta {
-  margin-top: 1rem;
 }
 
 /* Main Content */
