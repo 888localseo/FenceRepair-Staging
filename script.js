@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function () {
   addTracking('.cta-phone-header', 'click_phone_header');
   addTracking('.cta-booknow-header', 'click_booknow_button_header');
 
-  // Modal Functionality for Image Gallery
-  const galleryImages = document.querySelectorAll('.image-gallery img');
+  // Modal Functionality for Image Gallery (Past Projects)
+  const galleryImages = document.querySelectorAll('.past-projects-gallery img');
   const modal = document.getElementById('imageModal');
   const modalImg = document.getElementById('modalImg');
   const closeBtn = document.querySelector('.modal .close');
@@ -68,12 +68,9 @@ document.addEventListener('DOMContentLoaded', function () {
     tabLinks.forEach(function (linkItem) {
       linkItem.addEventListener('click', function (e) {
         e.preventDefault();
-        // Remove active class from all links and tabs
         tabLinks.forEach(li => li.classList.remove('active'));
         tabContents.forEach(tab => tab.classList.remove('active'));
-        // Add active class to the clicked link
         linkItem.classList.add('active');
-        // Get the target tab id from the anchor href
         const target = linkItem.querySelector('a').getAttribute('href');
         const targetTab = container.querySelector(target);
         if (targetTab) {
@@ -114,45 +111,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 5000);
   }
 
-  // Counter Animations for Circle and Bar Counters
-  const counters = document.querySelectorAll('.circle-counter, .bar-counter');
-  function animateCounter(el) {
-    const percentage = el.getAttribute('data-percentage');
-    if (percentage) {
-      if (el.classList.contains('circle-counter')) {
-        let current = 0;
-        const step = Math.ceil(percentage / 100);
-        const interval = setInterval(function () {
-          current += step;
-          if (current >= percentage) {
-            current = percentage;
-            clearInterval(interval);
-          }
-          el.textContent = current + '%';
-        }, 20);
-      } else if (el.classList.contains('bar-counter')) {
-        const barFill = el.querySelector('.bar-fill');
-        if (barFill) {
-          barFill.style.width = percentage + '%';
-        }
-      }
-    }
-  }
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(function (entries, observer) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-    counters.forEach(function (counter) {
-      observer.observe(counter);
-    });
-  } else {
-    counters.forEach(function (counter) {
-      animateCounter(counter);
+  // Optional: Scroll Down Arrow functionality in Hero (if element exists)
+  const scrollDown = document.querySelector('.scroll-down');
+  if (scrollDown) {
+    scrollDown.addEventListener('click', function () {
+      window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
     });
   }
 });

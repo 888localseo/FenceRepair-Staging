@@ -1,12 +1,16 @@
 /* style.css */
 
-/* Root Variables for Brand Colors */
+/* Root Variables for Brand Colors & Font Sizes */
 :root {
   --main-bg: #F4F0E6;           /* Warm Off-White */
   --main-text: #2B1D0E;         /* Dark Brown */
-  --cta-bg: #7A4821;            /* Darkened Wood Brown for better contrast */
-  --cta-hover: #C62828;         /* Maple Red */
-  --accent: #A89F94;           /* Soft Gray */
+  --cta-bg: #7A4821;            /* Wood Brown for CTA background */
+  --cta-hover: #C62828;         /* Maple Red for CTA hover */
+  --accent: #A89F94;           /* Soft Gray for borders/shadows */
+  --h1-size: 2.75rem;
+  --h2-size: 2rem;
+  --h3-size: 1.75rem;
+  --h4-size: 1.5rem;
 }
 
 /* Global Reset */
@@ -54,23 +58,24 @@ body {
   transition: background-color 0.3s ease;
   min-width: 48px;
   min-height: 48px;
-  color: #fff; /* White text for visibility */
+  color: #fff;
   background-color: var(--cta-bg);
 }
 #sticky-top-strip a:hover {
   background-color: var(--cta-hover);
 }
 
-/* Header */
+/* Header - Centered Logo & Simplified Navigation */
 header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   padding: 1rem 0;
   border-bottom: 2px solid var(--accent);
 }
 header .logo {
-  margin-left: 0;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 header .logo img {
   display: block;
@@ -78,13 +83,11 @@ header .logo img {
   height: 120px;
   object-fit: contain;
 }
-
-/* Hamburger Button */
 .hamburger {
   background: none;
   border: none;
   cursor: pointer;
-  display: none;
+  display: none; /* visible on mobile only */
   padding: 0.5rem;
   min-width: 48px;
   min-height: 48px;
@@ -97,11 +100,10 @@ header .logo img {
   margin: 4px 0;
   transition: 0.4s;
 }
-
-/* Navigation Links */
 nav {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 nav a {
   margin: 0 1rem;
@@ -117,24 +119,6 @@ nav a {
 }
 nav a:hover {
   color: var(--cta-bg);
-}
-
-/* CTA Buttons (only used in sticky top strip) */
-.cta {
-  background-color: var(--cta-bg);
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  min-width: 48px;
-  min-height: 48px;
-}
-.cta:hover {
-  background-color: var(--cta-hover);
 }
 
 /* Hero Section */
@@ -153,28 +137,58 @@ nav a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.5);
-  padding: 1rem;
+  background: rgba(0,0,0,0.5);
+  padding: 1.5rem;
   border-radius: 8px;
   max-width: 90%;
   margin: auto;
 }
 .hero .hero-content h1 {
   font-family: 'League Spartan', sans-serif;
-  font-size: 2.5rem;
+  font-size: var(--h1-size);
   margin-bottom: 0.5rem;
 }
 .hero .hero-content p {
   font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+/* Scroll Down Arrow */
+.hero .scroll-down {
+  display: block;
+  margin: 1rem auto 0;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(10px); }
+  60% { transform: translateY(5px); }
 }
 
-/* Main Content */
+/* Headings */
+h1 {
+  font-size: var(--h1-size);
+}
+h2 {
+  font-size: var(--h2-size);
+  margin-bottom: 1rem;
+}
+h3 {
+  font-size: var(--h3-size);
+}
+h4 {
+  font-size: var(--h4-size);
+}
+
+/* Main Content Sections */
 main {
   padding: 2rem 0;
   flex: 1;
 }
 
-/* Grid Layout */
+/* Row & Column Grid */
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -189,7 +203,7 @@ main {
   padding: 0.5rem;
 }
 
-/* Service Cards (3-Column Cards) */
+/* Service Cards (Tiles) - Uniform, Fully Clickable */
 .service-card {
   background: #fff;
   border: 1px solid var(--accent);
@@ -197,12 +211,17 @@ main {
   padding: 1rem;
   text-align: center;
   transition: box-shadow 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--main-text);
 }
 .service-card:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 .service-card img {
-  max-width: 100px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
   margin-bottom: 0.5rem;
 }
 
@@ -245,6 +264,7 @@ main {
 .accordion {
   border: 1px solid var(--accent);
   border-radius: 8px;
+  overflow: hidden;
 }
 .accordion-item {
   border-bottom: 1px solid var(--accent);
@@ -276,38 +296,22 @@ main {
   margin: 0;
 }
 
-/* Counters Styling */
-.counters {
-  display: flex;
-  justify-content: space-around;
-  text-align: center;
-  margin: 2rem 0;
+/* Past Projects Gallery */
+/* For the "Past Successful Projects" section */
+.past-projects-gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
 }
-.counter-item {
-  flex: 1;
-  margin: 0 1rem;
+.past-projects-gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
-.circle-counter {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: var(--cta-bg);
-  color: #fff;
-  line-height: 100px;
-  font-size: 1.5rem;
-  margin: 0 auto 1rem;
-}
-.bar-counter {
-  background: #eee;
-  border-radius: 4px;
-  overflow: hidden;
-  height: 30px;
-}
-.bar-fill {
-  background: var(--cta-bg);
-  height: 100%;
-  width: 0;
-  transition: width 1s ease-in-out;
+.past-projects-gallery img:hover {
+  transform: scale(1.05);
 }
 
 /* Slider Styling */
@@ -374,32 +378,25 @@ footer .powered-by {
   #sticky-top-strip a:last-child {
     margin-bottom: 0;
   }
-
-  /* Header Logo: Reduce size on mobile */
+  /* Header: Logo reduced; navigation stacked vertically */
   header .logo img {
     width: 300px;
     height: auto;
   }
-  /* Navigation: Stack links vertically */
   nav {
-    display: none;
     flex-direction: column;
     width: 100%;
     background-color: var(--main-bg);
     padding: 1rem 0;
   }
-  nav.open {
-    display: flex;
-  }
   nav a {
     margin: 0.5rem 0;
   }
-  /* Hamburger: Ensure it's visible on mobile */
   .hamburger {
     display: block;
   }
-  /* Adjust hero content padding */
-  .hero .hero-content {
-    padding: 1rem;
+  /* Past Projects Gallery: 2 columns on mobile */
+  .past-projects-gallery {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
