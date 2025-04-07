@@ -5,18 +5,17 @@ document.addEventListener('DOMContentLoaded', function () {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  // Hamburger Menu Toggle for Mobile Navigation with ARIA support
+  // Hamburger Menu Toggle with ARIA support
   const hamburger = document.querySelector('.hamburger');
   const nav = document.querySelector('nav');
   if (hamburger && nav) {
     hamburger.addEventListener('click', function () {
       const isOpen = nav.classList.toggle('open');
-      // Update aria-expanded attribute
       hamburger.setAttribute('aria-expanded', isOpen);
     });
   }
 
-  // GA4 Event Tracking Function (only for sticky top CTAs)
+  // GA4 Event Tracking Function
   function trackEvent(eventName) {
     if (typeof gtag === 'function') {
       gtag('event', eventName);
@@ -24,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log('GA4 Event Triggered:', eventName);
     }
   }
-
   function addTracking(selector, eventName) {
     const elements = document.querySelectorAll(selector);
     elements.forEach(function (el) {
@@ -33,12 +31,10 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
-
-  // Attach GA4 event tracking for sticky top CTAs only
   addTracking('.cta-phone-header', 'click_phone_header');
   addTracking('.cta-booknow-header', 'click_booknow_button_header');
 
-  // Modal Functionality for Image Gallery
+  // Modal Functionality for Gallery Images
   const galleryImages = document.querySelectorAll('.image-gallery img');
   const modal = document.getElementById('imageModal');
   const modalImg = document.getElementById('modalImg');
@@ -50,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
       if (highResSrc) {
         modalImg.src = highResSrc;
         modal.style.display = 'block';
-        // Set focus to close button for accessibility
         closeBtn.focus();
       }
     });
@@ -62,12 +57,9 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   if (closeBtn) {
-    closeBtn.addEventListener('click', function () {
-      closeModal();
-    });
+    closeBtn.addEventListener('click', closeModal);
   }
 
-  // Close modal when clicking outside the image
   if (modal) {
     modal.addEventListener('click', function (e) {
       if (e.target === modal) {
@@ -76,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Close modal on pressing Escape key
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && modal.style.display === 'block') {
       closeModal();

@@ -1,12 +1,12 @@
 /* style.css */
 
-/* Root Variables for Brand Colors */
+/* Root Variables */
 :root {
-  --main-bg: #F4F0E6;           /* Warm Off-White */
-  --main-text: #2B1D0E;         /* Dark Brown */
-  --cta-bg: #7A4821;            /* Darkened Wood Brown for better contrast */
-  --cta-hover: #C62828;         /* Maple Red */
-  --accent: #A89F94;           /* Soft Gray */
+  --main-bg: #F4F0E6;
+  --main-text: #2B1D0E;
+  --cta-bg: #7A4821;
+  --cta-hover: #C62828;
+  --accent: #A89F94;
 }
 
 /* Global Reset */
@@ -26,7 +26,7 @@ body {
   flex-direction: column;
 }
 
-/* Skip Navigation Link */
+/* Skip Navigation */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -41,7 +41,7 @@ body {
   top: 0;
 }
 
-/* Focus Styles for Interactive Elements */
+/* Focus Styles */
 a:focus, button:focus {
   outline: 2px dashed var(--cta-hover);
   outline-offset: 2px;
@@ -55,15 +55,17 @@ a:focus, button:focus {
   background-color: var(--main-bg);
   border-bottom: 1px solid var(--accent);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 1rem;
   padding: 0.5rem 1rem;
 }
 #sticky-top-strip a {
-  color: var(--cta-bg);
+  background-color: var(--cta-bg);
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 4px;
   transition: background-color 0.3s ease;
   min-width: 48px;
@@ -71,7 +73,6 @@ a:focus, button:focus {
 }
 #sticky-top-strip a:hover {
   background-color: var(--cta-hover);
-  color: #fff;
 }
 
 /* Header */
@@ -82,10 +83,16 @@ header {
   padding: 1rem 0;
   border-bottom: 2px solid var(--accent);
 }
-header .logo img {
-  display: block;
-  width: 800px;
-  height: 120px;
+.logo {
+  flex: 1;
+}
+header .logo a {
+  display: inline-block;
+}
+header .logo img.main-logo {
+  width: auto;
+  max-width: 250px;
+  height: auto;
   object-fit: contain;
 }
 
@@ -94,10 +101,10 @@ header .logo img {
   background: none;
   border: none;
   cursor: pointer;
-  display: none;
   padding: 0.5rem;
   min-width: 48px;
   min-height: 48px;
+  display: none;
 }
 .hamburger span {
   display: block;
@@ -108,43 +115,22 @@ header .logo img {
   transition: 0.4s;
 }
 
-/* Navigation Links */
+/* Navigation */
 nav {
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 nav a {
-  margin: 0 1rem;
   font-family: 'Oswald', sans-serif;
   font-weight: 500;
   color: var(--main-text);
   text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  min-height: 48px;
   padding: 0.5rem;
   transition: color 0.3s ease;
 }
 nav a:hover {
   color: var(--cta-bg);
-}
-
-/* CTA Buttons (used only in sticky top strip) */
-.cta {
-  background-color: var(--cta-bg);
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  min-width: 48px;
-  min-height: 48px;
-}
-.cta:hover {
-  background-color: var(--cta-hover);
 }
 
 /* Hero Section */
@@ -153,7 +139,7 @@ nav a:hover {
   text-align: center;
   color: #fff;
 }
-.hero img {
+.hero .hero-image {
   width: 100%;
   height: auto;
   display: block;
@@ -166,8 +152,7 @@ nav a:hover {
   background: rgba(0, 0, 0, 0.5);
   padding: 1rem;
   border-radius: 8px;
-  max-width: 90%;
-  margin: auto;
+  max-width: 80%;
 }
 .hero .hero-content h1 {
   font-family: 'League Spartan', sans-serif;
@@ -196,15 +181,29 @@ section h2 {
   margin-bottom: 1rem;
 }
 
-/* Image Gallery Section */
+/* Cities List */
+.cities-list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.cities-list li {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+/* Image Gallery */
 .image-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 0;
+  gap: 8px;
 }
 .image-gallery img {
   width: 100%;
-  height: 300px; /* Force square shape */
+  height: 300px;
   object-fit: cover;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -213,9 +212,9 @@ section h2 {
   transform: scale(1.05);
 }
 
-/* Modal Styles for Gallery */
+/* Modal Styles */
 .modal {
-  display: none; 
+  display: none;
   position: fixed;
   z-index: 1500;
   left: 0;
@@ -235,7 +234,7 @@ section h2 {
   position: absolute;
   top: 20px;
   right: 35px;
-  color: #fff;
+  color: #000;
   font-size: 40px;
   font-weight: bold;
   background: none;
@@ -270,9 +269,20 @@ footer .powered-by {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-  body {
-    padding: 0 1rem;
+  /* Adjust sticky top strip layout */
+  #sticky-top-strip {
+    flex-direction: column;
+    gap: 0.5rem;
   }
+  /* Logo adjustments */
+  header .logo img.main-logo {
+    max-width: 180px;
+  }
+  /* Hamburger visible */
+  .hamburger {
+    display: block;
+  }
+  /* Navigation adjustments */
   nav {
     display: none;
     flex-direction: column;
@@ -286,10 +296,9 @@ footer .powered-by {
   nav a {
     margin: 0.5rem 0;
   }
-  .hamburger {
-    display: block;
-  }
+  /* Hero content adjustments */
   .hero .hero-content {
-    padding: 1rem;
+    max-width: 90%;
+    padding: 0.5rem;
   }
 }
