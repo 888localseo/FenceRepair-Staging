@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  // Hamburger Menu Toggle for Mobile Navigation
+  // Hamburger Menu Toggle for Mobile Navigation (using a button element)
   const hamburger = document.querySelector('.hamburger');
   const nav = document.querySelector('nav');
   if (hamburger && nav) {
