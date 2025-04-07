@@ -87,7 +87,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const accordionHeaders = document.querySelectorAll('.accordion-header');
   accordionHeaders.forEach(function (header) {
     header.addEventListener('click', function () {
-      // Toggle active class on header
       header.classList.toggle('active');
       const content = header.nextElementSibling;
       if (content.style.display === 'block') {
@@ -109,7 +108,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
     showSlide(currentSlide);
-    // Auto rotate slides every 5 seconds
     setInterval(function () {
       currentSlide = (currentSlide + 1) % slides.length;
       showSlide(currentSlide);
@@ -122,7 +120,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const percentage = el.getAttribute('data-percentage');
     if (percentage) {
       if (el.classList.contains('circle-counter')) {
-        // Animate circle counter text from 0 to target percentage
         let current = 0;
         const step = Math.ceil(percentage / 100);
         const interval = setInterval(function () {
@@ -134,7 +131,6 @@ document.addEventListener('DOMContentLoaded', function () {
           el.textContent = current + '%';
         }, 20);
       } else if (el.classList.contains('bar-counter')) {
-        // Animate bar fill width
         const barFill = el.querySelector('.bar-fill');
         if (barFill) {
           barFill.style.width = percentage + '%';

@@ -41,12 +41,12 @@ body {
   background-color: var(--main-bg);
   border-bottom: 1px solid var(--accent);
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
 }
 #sticky-top-strip a {
-  color: var(--cta-bg);
   text-decoration: none;
   font-weight: bold;
   padding: 0.5rem 1rem;
@@ -54,10 +54,11 @@ body {
   transition: background-color 0.3s ease;
   min-width: 48px;
   min-height: 48px;
+  color: #fff; /* White text for visibility */
+  background-color: var(--cta-bg);
 }
 #sticky-top-strip a:hover {
   background-color: var(--cta-hover);
-  color: #fff;
 }
 
 /* Header */
@@ -67,6 +68,9 @@ header {
   align-items: center;
   padding: 1rem 0;
   border-bottom: 2px solid var(--accent);
+}
+header .logo {
+  margin-left: 0;
 }
 header .logo img {
   display: block;
@@ -185,7 +189,7 @@ main {
   padding: 0.5rem;
 }
 
-/* Service Cards (3 Column Cards) */
+/* Service Cards (3-Column Cards) */
 .service-card {
   background: #fff;
   border: 1px solid var(--accent);
@@ -357,20 +361,45 @@ footer .powered-by {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-  .row {
+  /* Sticky Top Strip: Stack CTAs vertically, full width */
+  #sticky-top-strip {
     flex-direction: column;
+    align-items: stretch;
   }
-  .col-6 {
-    flex: 1 0 100%;
-  }
-  .tab-links {
-    flex-direction: column;
-  }
-  .tab-links li {
-    margin-right: 0;
+  #sticky-top-strip a {
+    width: 100%;
+    text-align: center;
     margin-bottom: 0.5rem;
   }
-  .counters {
+  #sticky-top-strip a:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Header Logo: Reduce size on mobile */
+  header .logo img {
+    width: 300px;
+    height: auto;
+  }
+  /* Navigation: Stack links vertically */
+  nav {
+    display: none;
     flex-direction: column;
+    width: 100%;
+    background-color: var(--main-bg);
+    padding: 1rem 0;
+  }
+  nav.open {
+    display: flex;
+  }
+  nav a {
+    margin: 0.5rem 0;
+  }
+  /* Hamburger: Ensure it's visible on mobile */
+  .hamburger {
+    display: block;
+  }
+  /* Adjust hero content padding */
+  .hero .hero-content {
+    padding: 1rem;
   }
 }
