@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  // Hamburger Menu Toggle for Mobile Navigation
+  // Hamburger Menu Toggle for Mobile Navigation (if needed later)
   const hamburger = document.querySelector('.hamburger');
   const nav = document.querySelector('nav');
   if (hamburger && nav) {
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // GA4 Event Tracking Function (for sticky top CTAs)
+  // GA4 Event Tracking for Sticky Top CTAs
   function trackEvent(eventName) {
     if (typeof gtag === 'function') {
       gtag('event', eventName);
@@ -33,11 +33,12 @@ document.addEventListener('DOMContentLoaded', function () {
   addTracking('.cta-phone-header', 'click_phone_header');
   addTracking('.cta-booknow-header', 'click_booknow_button_header');
 
-  // Modal Functionality for Image Gallery (Past Projects)
+  // Modal Functionality for Past Projects Gallery
   const galleryImages = document.querySelectorAll('.past-projects-gallery img');
   const modal = document.getElementById('imageModal');
   const modalImg = document.getElementById('modalImg');
   const closeBtn = document.querySelector('.modal .close');
+
   galleryImages.forEach(function (img) {
     img.addEventListener('click', function () {
       const highResSrc = img.getAttribute('data-highres');
@@ -60,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Tabs Functionality for Tabbed Interfaces
+  // Tabs Functionality for Interactive Sections
   const tabContainers = document.querySelectorAll('.tabs');
   tabContainers.forEach(function (container) {
     const tabLinks = container.querySelectorAll('.tab-links li');
@@ -68,9 +69,12 @@ document.addEventListener('DOMContentLoaded', function () {
     tabLinks.forEach(function (linkItem) {
       linkItem.addEventListener('click', function (e) {
         e.preventDefault();
+        // Remove active class from all links and tabs
         tabLinks.forEach(li => li.classList.remove('active'));
         tabContents.forEach(tab => tab.classList.remove('active'));
+        // Add active class to the clicked link
         linkItem.classList.add('active');
+        // Get the target tab id from the anchor href
         const target = linkItem.querySelector('a').getAttribute('href');
         const targetTab = container.querySelector(target);
         if (targetTab) {
@@ -111,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 5000);
   }
 
-  // Optional: Scroll Down Arrow functionality in Hero (if element exists)
+  // Optional: Scroll Down Arrow functionality in Hero Section
   const scrollDown = document.querySelector('.scroll-down');
   if (scrollDown) {
     scrollDown.addEventListener('click', function () {
