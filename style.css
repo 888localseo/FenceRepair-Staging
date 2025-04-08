@@ -102,7 +102,6 @@ header .logo img {
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.5);
-  /* Reduced padding to ensure the canvas fits within the background image */
   padding: 0.75rem 1rem;
   border-radius: 8px;
   max-width: 90%;
@@ -112,12 +111,10 @@ header .logo img {
   font-family: 'League Spartan', sans-serif;
   font-size: var(--h1-size);
   margin-bottom: 0.5rem;
-  /* Reduced line-height to decrease vertical spacing between lines */
   line-height: 1.1;
 }
 .hero .hero-content p {
   font-size: 1.25rem;
-  /* Slightly reduced bottom margin for a tighter layout */
   margin-bottom: 0.75rem;
 }
 /* Scroll Down Arrow */
@@ -268,8 +265,9 @@ main {
 
 /* Accordion Margin Update for "Reading Your Fence's Vital Signs" Section */
 #vital-signs-accordion .accordion {
-  width: calc(100vw - 2rem); /* 100vw less 2rem for 1rem margin on each side */
-  margin-left: calc(-50vw + 50% + 1rem);  /* Adjust left margin to account for the added padding */
+  width: calc(100vw - 2rem); /* 100vw less 2rem for white space */
+  margin-left: calc(-50vw + 50% + 1rem);  /* Centers the accordion with 1rem margin on left */
+  margin-right: 1rem;
 }
 
 /* Checklist Styling for Bullet List 1 */
@@ -369,14 +367,12 @@ table td {
 }
 
 /* Secondary Banner Styling */
+/* Using standard full-bleed technique: */
 #secondary-banner {
-  width: 100vw;
   position: relative;
   left: 50%;
-  right: 50%;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  padding: 0 1rem; /* Align with overall page margins */
+  margin-left: -50vw;
+  width: 100vw;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
