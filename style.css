@@ -6,7 +6,7 @@
   --main-text: #2B1D0E;         /* Dark Brown */
   --cta-bg: #7A4821;            /* Wood Brown for CTA background */
   --cta-hover: #C62828;         /* Maple Red for CTA hover */
-  --accent: #A89F94;            /* Soft Gray for borders/shadows */
+  --accent: #A89F94;           /* Soft Gray for borders/shadows */
   --h1-size: 2.75rem;
   --h2-size: 2rem;
   --h3-size: 1.75rem;
@@ -102,6 +102,7 @@ header .logo img {
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.5);
+  /* Reduced padding to ensure the canvas fits within the background image */
   padding: 0.75rem 1rem;
   border-radius: 8px;
   max-width: 90%;
@@ -111,10 +112,12 @@ header .logo img {
   font-family: 'League Spartan', sans-serif;
   font-size: var(--h1-size);
   margin-bottom: 0.5rem;
+  /* Reduced line-height to decrease vertical spacing between lines */
   line-height: 1.1;
 }
 .hero .hero-content p {
   font-size: 1.25rem;
+  /* Slightly reduced bottom margin for a tighter layout */
   margin-bottom: 0.75rem;
 }
 /* Scroll Down Arrow */
@@ -263,10 +266,10 @@ main {
   border-top: 1px solid var(--accent);
 }
 
-/* Fix accordion width for Reading Your Fence's Vital Signs section */
+/* Accordion Margin Update for "Reading Your Fence's Vital Signs" Section */
 #vital-signs-accordion .accordion {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
+  width: calc(100vw - 2rem); /* 100vw less 2rem for 1rem margin on each side */
+  margin-left: calc(-50vw + 50% + 1rem);  /* Adjust left margin to account for the added padding */
 }
 
 /* Checklist Styling for Bullet List 1 */
@@ -365,7 +368,18 @@ table td {
   cursor: pointer;
 }
 
-/* Secondary Banner Divider */
+/* Secondary Banner Styling */
+#secondary-banner {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding: 0 1rem; /* Align with overall page margins */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 #secondary-banner img {
   width: 100%;
   height: auto;
