@@ -102,7 +102,8 @@ header .logo img {
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.5);
-  padding: 1.5rem;
+  /* Reduced padding to ensure the canvas fits within the background image */
+  padding: 0.75rem 1rem;
   border-radius: 8px;
   max-width: 90%;
   margin: auto;
@@ -111,10 +112,13 @@ header .logo img {
   font-family: 'League Spartan', sans-serif;
   font-size: var(--h1-size);
   margin-bottom: 0.5rem;
+  /* Reduced line-height to decrease vertical spacing between lines */
+  line-height: 1.1;
 }
 .hero .hero-content p {
   font-size: 1.25rem;
-  margin-bottom: 1rem;
+  /* Slightly reduced bottom margin for a tighter layout */
+  margin-bottom: 0.75rem;
 }
 /* Scroll Down Arrow */
 .hero .scroll-down {
