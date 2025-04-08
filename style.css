@@ -6,7 +6,7 @@
   --main-text: #2B1D0E;         /* Dark Brown */
   --cta-bg: #7A4821;            /* Wood Brown for CTA background */
   --cta-hover: #C62828;         /* Maple Red for CTA hover */
-  --accent: #A89F94;           /* Soft Gray for borders/shadows */
+  --accent: #A89F94;            /* Soft Gray for borders/shadows */
   --h1-size: 2.75rem;
   --h2-size: 2rem;
   --h3-size: 1.75rem;
@@ -134,7 +134,12 @@ header .logo img {
   60% { transform: translateY(5px); }
 }
 
-/* Headings */
+/* Global Headings - Updated to use League Spartan for consistency */
+h1, h2, h3, h4 {
+  font-family: 'League Spartan', sans-serif;
+}
+
+/* Headings Size & Spacing */
 h1 {
   font-size: var(--h1-size);
 }
